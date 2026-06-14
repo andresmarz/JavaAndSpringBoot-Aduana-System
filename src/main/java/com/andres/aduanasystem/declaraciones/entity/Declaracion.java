@@ -4,8 +4,6 @@ import com.andres.aduanasystem.usuarios.entity.Usuario;
 import jakarta.persistence.*;
 import lombok.*;
 
-import java.time.LocalDate;
-
 @Entity
 @Table(name = "declaraciones")
 @Getter
@@ -19,10 +17,10 @@ public class Declaracion {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(nullable = false)
     private String numero;
 
-    private LocalDate fecha;
-
+    @Column(nullable = false)
     private String estado;
 
     @ManyToOne
